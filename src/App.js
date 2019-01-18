@@ -5,8 +5,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Page1  from './containers/Page1';
 import Page2  from './containers/Page2';
 
-import './App.css';
-
 class App extends Component {
   render() {
 
