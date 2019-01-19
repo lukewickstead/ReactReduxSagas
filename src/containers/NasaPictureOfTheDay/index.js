@@ -38,7 +38,7 @@ class NasaPictureOfTheDay extends Component {
               <ErrorDialogueBox error={error} />
             }
 
-            { !isLoading &&
+            { !isLoading && !error &&
               <ImageWithDescription
                 title={title}
                 url={url}

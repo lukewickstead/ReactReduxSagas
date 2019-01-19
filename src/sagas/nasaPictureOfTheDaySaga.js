@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 
-import {consoleLog} from '../helpers/consoleHelpers';
+import {consoleError} from '../helpers/consoleHelpers';
 import { getAstronomyPictureOfTheDay } from '../api/nasaApis';
 
 import
@@ -17,8 +17,9 @@ export function* nasaPictureOfTheDaySaga() {
         const response = yield call(getAstronomyPictureOfTheDay);
         yield put(putNasaPictureOfTheDay(response.data));           
     } catch (error) {
-        yield call(consoleLog, error);
-        yield put(putNasaPictureOfTheDayError(error));
+        const errorMsg = error.response.data.error.message;
+        yield call(consoleError, errorMsg);
+        yield put(putNasaPictureOfTheDayError(errorMsg));
     } finally {
         yield put(putNasaPictureOfTheDayLoading(false));           
     }

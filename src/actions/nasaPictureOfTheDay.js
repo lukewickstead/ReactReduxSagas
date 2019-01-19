@@ -8,8 +8,8 @@ export function getNasaPictureOfTheDay() {
     return { type: GET_NASA_PICTURE_OF_THE_DAY};    
 }
 
-export function putNasaPictureOfTheDayError(vaue) {
-    return { type: PUT_NASA_PICTURE_OF_THE_DAY_ERROR, vaue};    
+export function putNasaPictureOfTheDayError(value) {
+    return { type: PUT_NASA_PICTURE_OF_THE_DAY_ERROR, value};    
 }
 
 export function putNasaPictureOfTheDayLoading(value) {
