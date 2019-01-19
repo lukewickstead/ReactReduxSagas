@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import './App.scss';
+import 'font-awesome/css/font-awesome.min.css'
 
 import NasaPictureOfTheDay  from './containers/NasaPictureOfTheDay';
 

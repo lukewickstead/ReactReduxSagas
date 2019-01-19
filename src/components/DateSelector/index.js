@@ -4,6 +4,7 @@ function DateSelector({error}) {
 
     return (
         <span className="date-selector">
+            <i className="fa fa-thumbs-up"></i>
             <div className='button'>&lt;&lt;&lt;</div>
             <div className='button'>&lt;&lt;</div>
             <div className='button'>&lt;</div>
