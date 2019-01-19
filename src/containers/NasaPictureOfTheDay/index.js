@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import ErrorDialogueBox from '../../components/ErrorDialogueBox';
+import DateSelector from '../../components/DateSelector';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import ErrorDialogueBox from '../../components/ErrorDialogueBox';
 import ImageWithDescription from '../../components/ImageWithDescription';
 import { getNasaPictureOfTheDay } from "../../actions/nasaPictureOfTheDay";
 
@@ -29,7 +30,8 @@ class NasaPictureOfTheDay extends Component {
     return (
           <>     
             <h1>NASA Picture of the Day</h1>
-
+            <DateSelector/>
+            
             {isLoading &&
               <LoadingSpinner />
             }

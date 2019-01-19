@@ -2,6 +2,8 @@ import { Provider } from 'react-redux';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import './App.scss';
+
 import NasaPictureOfTheDay  from './containers/NasaPictureOfTheDay';
 
 class App extends Component {
