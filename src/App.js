@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import NasaPictureOfTheDay  from './containers/nasaPictureOfTheDay';
+import NasaPictureOfTheDay  from './containers/NasaPictureOfTheDay';
 
 class App extends Component {
   render() {

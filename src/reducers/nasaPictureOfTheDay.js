@@ -1,17 +1,23 @@
-import { PUT_NASA_PICTURE_OF_THE_DAY, GET_NASA_PICTURE_OF_THE_DAY_ERRORED } from '../actions/actionTypes';
+import {
+  PUT_NASA_PICTURE_OF_THE_DAY,
+  PUT_NASA_PICTURE_OF_THE_DAY_ERROR,
+  PUT_NASA_PICTURE_OF_THE_DAY_LOADING
+} from '../actions/actionTypes';
 
 export const initialState = {
     data: {},
     error: '',
-    isLoaded: false   
+    isLoading: false   
 }
 
 export default function nasaPictureOfTheDayReducer(state = initialState, action) {
   switch (action.type) {
     case PUT_NASA_PICTURE_OF_THE_DAY:
       return {...state, data: action.value} ;
-    case GET_NASA_PICTURE_OF_THE_DAY_ERRORED:
+    case PUT_NASA_PICTURE_OF_THE_DAY_ERROR:
       return {...state, error: action.value} ;
+    case PUT_NASA_PICTURE_OF_THE_DAY_LOADING:
+      return {...state, isLoading: action.value} ;
     default:
       return state;
   }
