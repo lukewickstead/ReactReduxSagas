@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Page1  from './containers/Page1';
-import Page2  from './containers/Page2';
+import NasaPictureOfTheDay  from './containers/nasaPictureOfTheDay';
 
 class App extends Component {
   render() {
@@ -14,9 +13,8 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Page1} />
-          <Route path="/One" exact component={Page1} />
-          <Route path="/Two" exact component={Page2} />
+          <Route path="/" exact component={NasaPictureOfTheDay} />
+          <Route path="/NasaPictureOfTheDay" exact component={NasaPictureOfTheDay} />
         </Switch>
         </BrowserRouter>
       </Provider>

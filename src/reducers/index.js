@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import test from './test';
+import nasaPictureOfTheDay from './nasaPictureOfTheDay';
 
 const rootReducer = combineReducers({
-    test
+    nasaPictureOfTheDay
 });
 
 export default rootReducer;
