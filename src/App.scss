@@ -1,10 +1,95 @@
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+@font-face {
+    font-family: 'HolidayFree';
+    src: url('./fonts/HolidayFree.otf') format('opentype')
+}
+
+html {
+    background-color: black;
+
+    .nasaPicOfDayContainer {
+        font-family: HolidayFree;
+        color: rgba(235, 240, 240, 0.8);
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            transform: rotate(-2deg);
+            padding: 50px 0px
+        }        
+
+        .date-selector {
+            position: absolute;
+            left: 10%;
+            top: 40%x;
+            width: 45%;
+            max-height: 75%;
+
+            .button {
+                padding: 5px 5px;
+                margin: 5px 5px; 
+                text-align: center;
+                display: inline-block;  
+                font-size: 2em;
+              }            
+        }
+        
+        .information {
+            position: absolute;
+            left: 10%;
+            bottom:40%;
+            width: 45%;
+            max-height: 75%;
+
+            p {
+                font-size: 2em;
+                transform: rotate(-3deg);
+            }    
+        }
+
+        .polaroid-image {
+            position: absolute;
+            right: 0px;
+            width: 35%;
+            padding: 15px;
+            margin-right: 100px;
+            transform: rotate(7deg);
+            background-color: white;
+        
+            img {
+                width: 100%;       
+            }
+
+            p {
+                color: black;
+                font-size: 0.7em;
+                text-align: center;
+            }
+            
+            &:before {
+                top: 0px;
+                left: -25px;
+                border-radius: 1px;
+                content: ' ';
+                width: 71px;
+                height: 20px;
+                max-width: 300px;
+                position: absolute;
+                transform: rotate(-39deg);
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+        
+            &:after {
+                top: 0px;
+                right: -25px;
+                border-radius: 1px;
+                content: ' ';
+                width: 68px;
+                height: 20px;
+                max-width: 300px;
+                position: absolute;
+                transform: rotate(41deg);
+                background-color: rgba(255, 255, 255, 0.3);
+            }    
+        }
+    }
+}

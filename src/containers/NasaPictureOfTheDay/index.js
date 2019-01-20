@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import DateSelector from '../../components/DateSelector';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import ErrorDialogueBox from '../../components/ErrorDialogueBox';
-import ImageWithDescription from '../../components/ImageWithDescription';
+import PolaroidImage from '../../components/ImageWithDescription';
 import { getNasaPictureOfTheDay } from "../../actions/nasaPictureOfTheDay";
 
 class NasaPictureOfTheDay extends Component {
@@ -21,32 +21,48 @@ class NasaPictureOfTheDay extends Component {
       explanation,
       hdurl,
       url,
-      title, 
-
+      title,
+      date
     } = this.props.data;
 
     const {isLoading, error} = this.props;
 
     return (
-          <>     
-            <h1>NASA Picture of the Day</h1>
-            <DateSelector/>
-            
-            {isLoading &&
-              <LoadingSpinner />
-            }
+          <>
+            <div className="nasaPicOfDayContainer">
+              <h1>NASA Picture of the Day</h1>
 
-            {error &&
-              <ErrorDialogueBox error={error} />
-            }
+              {isLoading &&
+                <>
+                  <div className="information">
+                    <p>Please wait, loading....</p>
+                  </div>              
+                  <LoadingSpinner />
+                </>
+              }
 
-            { !isLoading && !error &&
-              <ImageWithDescription
-                title={title}
-                url={url}
-                hdurl={hdurl}
-                description={explanation} />
-            }
+              {error &&
+                <ErrorDialogueBox error={error} />
+              }
+
+              {!isLoading &&
+                <DateSelector date={date} />
+              }
+
+              { !isLoading && !error &&
+                <>
+                  <div className="information">
+                    <p>More information...</p>
+                  </div>
+
+                  <PolaroidImage
+                    title={title}
+                    url={url}
+                    hdurl={hdurl}
+                    description={explanation} />
+                </>
+              }
+            </div>
           </> 
      );
   }

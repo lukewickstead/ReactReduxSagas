@@ -1,17 +1,12 @@
 import React from 'react';
 
-function DateSelector({error}) {
+function DateSelector({date}) {
 
     return (
         <span className="date-selector">
-            <i className="fa fa-thumbs-up"></i>
-            <div className='button'>&lt;&lt;&lt;</div>
-            <div className='button'>&lt;&lt;</div>
-            <div className='button'>&lt;</div>
-            <div className='button'>Today</div>
-            <div className='button'>&gt;</div>
-            <div className='button'>&gt;&gt;</div>
-            <div className='button'>&gt;&gt;&gt;</div>
+            <div className='button'>PREV</div>
+            <div className='button'>{date}</div>
+            <div className='button'>NEXT</div>
         </span>
     )
 }

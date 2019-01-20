@@ -2,23 +2,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function ImageWithDescription({title, url, hdurl, description}) {
+function PolaroidImage({title, url, hdurl}) {
 
     return (
-        <div className="image-with-description">
-            <h2>{title}</h2>
-            <p>{description}</p>
+        <div className="polaroid-image">
             <img src={url}/>
-            <a href={hdurl}>View In HD</a>
+            <p>{title}</p>
         </div>
     )
 }
 
-ImageWithDescription.propTypes = {
+PolaroidImage.propTypes = {
     url: PropTypes.string.isRequired,
     hdurl: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
 }
 
-export default ImageWithDescription;
+export default PolaroidImage;
