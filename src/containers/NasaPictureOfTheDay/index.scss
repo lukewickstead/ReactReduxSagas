@@ -1,0 +1,37 @@
+
+html {
+    background-color: black;
+   
+    .nasaPicOfDayContainer {
+        font-family: HolidayFree;
+        color: rgba(235, 240, 240, 0.8);
+
+        h1 {
+            font-size: 2.5em;
+            text-align: right;
+            transform: rotate(-2deg);
+            padding: 25px 25px
+        }
+
+        .polaroid-image {
+            height: 70%;
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(5deg);
+        }
+       
+        .loadingMessage {
+            position: absolute;
+            left: 1%;
+            bottom:10%;
+            width: 45%;
+            max-height: 75%;
+
+            p {
+                font-size: 2em;
+                transform: rotate(-3deg);
+            }    
+        }        
+    }
+}

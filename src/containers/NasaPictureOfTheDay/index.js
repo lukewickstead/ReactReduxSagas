@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import DateSelector from '../../components/DateSelector';
-import LoadingSpinner from '../../components/LoadingSpinner';
-import ErrorDialogueBox from '../../components/ErrorDialogueBox';
-import PolaroidImage from '../../components/ImageWithDescription';
-import { getNasaPictureOfTheDay } from "../../actions/nasaPictureOfTheDay";
+import PolaroidImage from '../../components/PolaroidImage';
+import PostItNoteDialogueBox from '../../components/PostItNoteDialogueBox'
+import SimpleTextButtonGroup from '../../components/SimpleTextButtonGroup';
+
+import {
+  getNasaPictureOfTheDay,
+  putNasaPictureOfTheDayError,
+  putDisplayNasaPictureOfTheExplanation
+} from "../../actions/nasaPictureOfTheDay";
 
 class NasaPictureOfTheDay extends Component {
 
@@ -18,14 +22,15 @@ class NasaPictureOfTheDay extends Component {
   render() {
 
     const {
-      explanation,
-      hdurl,
       url,
+      date,
+      hdurl,
       title,
-      date
+      media_type,
+      explanation,
     } = this.props.data;
 
-    const {isLoading, error} = this.props;
+    const {isLoading, error, displayExplanation} = this.props;
 
     return (
           <>
@@ -33,34 +38,41 @@ class NasaPictureOfTheDay extends Component {
               <h1>NASA Picture of the Day</h1>
 
               {isLoading &&
-                <>
-                  <div className="information">
-                    <p>Please wait, loading....</p>
-                  </div>              
-                  <LoadingSpinner />
-                </>
+                <div className="loadingMessage">
+                  <p>Please wait, loading....</p>
+                </div>
+              }
+
+              {displayExplanation &&
+                <PostItNoteDialogueBox
+                  title={title}
+                  information={explanation}
+                  closeHandler={() => this.props.putDisplayNasaPictureOfTheExplanationHandler(false)}>
+                </PostItNoteDialogueBox>
               }
 
               {error &&
-                <ErrorDialogueBox error={error} />
+                <PostItNoteDialogueBox
+                  title={"Something wen't wrong...."}
+                  information={error}
+                  closeHandler={() => this.props.resetNasaPictureOfTheDayErrorHandler()} />
               }
 
               {!isLoading &&
-                <DateSelector date={date} />
+                <SimpleTextButtonGroup
+                  previousHandler={() => this.props.getNasaPictureOfTheDayHandler(-1)}
+                  nextHandler={() => this.props.getNasaPictureOfTheDayHandler(1)}
+                  infoHandler={() => this.props.putDisplayNasaPictureOfTheExplanationHandler(true)}/>
               }
 
-              { !isLoading && !error &&
-                <>
-                  <div className="information">
-                    <p>More information...</p>
-                  </div>
-
+              { !isLoading && !error && url &&
                   <PolaroidImage
                     title={title}
+                    date={date}
                     url={url}
                     hdurl={hdurl}
+                    mediaType={media_type}
                     description={explanation} />
-                </>
               }
             </div>
           </> 
@@ -71,22 +83,27 @@ class NasaPictureOfTheDay extends Component {
 NasaPictureOfTheDay.propTypes = {
   data: PropTypes.object.isRequired,
   error: PropTypes.string.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  displayExplanation: PropTypes.bool.isRequired,
+  getNasaPictureOfTheDayHandler: PropTypes.func.isRequired,
+  resetNasaPictureOfTheDayErrorHandler: PropTypes.func.isRequired,
+  putDisplayNasaPictureOfTheExplanationHandler: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
   return {
       data: state.nasaPictureOfTheDay.data,
       error: state.nasaPictureOfTheDay.error,
-      isLoading: state.nasaPictureOfTheDay.isLoading
+      isLoading: state.nasaPictureOfTheDay.isLoading,
+      displayExplanation: state.nasaPictureOfTheDay.displayExplanation
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getNasaPictureOfTheDayHandler: error => {
-          dispatch(getNasaPictureOfTheDay(error));
-      }
+      getNasaPictureOfTheDayHandler: day => dispatch(getNasaPictureOfTheDay(day)),
+      resetNasaPictureOfTheDayErrorHandler: () => dispatch(putNasaPictureOfTheDayError('')),
+      putDisplayNasaPictureOfTheExplanationHandler: display => dispatch(putDisplayNasaPictureOfTheExplanation(display))
   }
 }
 

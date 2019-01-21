@@ -2,10 +2,15 @@ import {
     GET_NASA_PICTURE_OF_THE_DAY,
     PUT_NASA_PICTURE_OF_THE_DAY,
     PUT_NASA_PICTURE_OF_THE_DAY_ERROR,
-    PUT_NASA_PICTURE_OF_THE_DAY_LOADING } from '../actions/actionTypes'
+    PUT_NASA_PICTURE_OF_THE_DAY_LOADING,
+    PUT_DISPLAY_NASA_PICTURE_OF_THE_DAY_EXPLANATION } from '../actions/actionTypes'
 
-export function getNasaPictureOfTheDay() {
-    return { type: GET_NASA_PICTURE_OF_THE_DAY};    
+export function getNasaPictureOfTheDay(value) {
+    return { type: GET_NASA_PICTURE_OF_THE_DAY, value};    
+}
+
+export function putNasaPictureOfTheDay(value) {
+    return { type: PUT_NASA_PICTURE_OF_THE_DAY, value };    
 }
 
 export function putNasaPictureOfTheDayError(value) {
@@ -16,6 +21,7 @@ export function putNasaPictureOfTheDayLoading(value) {
     return { type: PUT_NASA_PICTURE_OF_THE_DAY_LOADING, value};    
 }
 
-export function putNasaPictureOfTheDay(value) {
-    return { type: PUT_NASA_PICTURE_OF_THE_DAY, value };    
+export function putDisplayNasaPictureOfTheExplanation(value) {
+    return { type: PUT_DISPLAY_NASA_PICTURE_OF_THE_DAY_EXPLANATION, value};    
 }
+

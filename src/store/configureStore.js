@@ -2,7 +2,7 @@ import rootReducer from '../reducers/index';
 import createSagaMiddleware from 'redux-saga'
 import { createStore, applyMiddleware, compose } from 'redux';
 
-import { nasaPictureOfTheDaySaga }  from '../sagas/nasaPictureOfTheDaySaga';
+import watchNasaPictureOfDay  from '../sagas/nasaPictureOfTheDaySaga';
 
 export default function configureStore() {
 
@@ -16,7 +16,7 @@ export default function configureStore() {
       )
   );
 
-  sagaMiddleware.run(nasaPictureOfTheDaySaga)
+  sagaMiddleware.run(watchNasaPictureOfDay)
 
   return store;
 }

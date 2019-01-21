@@ -1,0 +1,21 @@
+.postItNoteDialogueBox {
+    font-family: 'Amatic SC';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-1deg);
+    z-index: 100;
+    background: #ffd81b;
+    color: black;
+    p {
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 1.7em;
+        font-weight: bold;
+    }
+
+    button {
+        color: black;
+    }
+}

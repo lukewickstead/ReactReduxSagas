@@ -1,0 +1,15 @@
+.simpleTextButton {
+    color: rgba(235, 240, 240, 0.8);
+    background-color: inherit;
+    padding: 5px 5px;
+    margin: 5px 5px; 
+    text-align: center;
+    display: block;  
+    font-size: 1.3em;
+    font-family: HolidayFree;
+    border: none;
+    &:hover {
+        cursor:pointer;
+        transform: scale(1.1);
+    }
+}
