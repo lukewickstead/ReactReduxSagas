@@ -1,11 +1,15 @@
-.polaroid-image {
+.polaroid-image, .polaroid-video {
     padding: 15px;
-    margin-right: 100px;
     background-color: white;
 
     img {
         height: 90%;       
         width: auto;       
+    }
+
+    iframe {
+        width: 50vw;
+        height: 50vh;
     }
 
     a {

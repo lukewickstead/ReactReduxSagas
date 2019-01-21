@@ -5,14 +5,21 @@ import PropTypes from 'prop-types';
 function PolaroidImage({title, date, mediaType, url, hdurl}) {
 
     return (
-        <div className="polaroid-image">
+        <div className={mediaType === 'video'? 'polaroid-video' : 'polaroid-image'}>
             <a href={hdurl || url}>
                 {mediaType === 'image' &&    
                     <img src={url}/>
                 }
                 
                 {mediaType === 'video' &&    
-                    <iframe title={title} src={url} width="100%" min-width="100%" frameBorder="0"></iframe>
+                    <iframe
+                        title={title}
+                        src={url}
+                        webkitallowfullscreen
+                        mozallowfullscreen
+                        allowfullscreen
+                        frameBorder="0">
+                    </iframe>
                 }
 
                 <p>{date} - {title}</p>

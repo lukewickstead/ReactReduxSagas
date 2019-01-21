@@ -20,6 +20,15 @@ html {
             left: 50%;
             transform: translate(-50%, -50%) rotate(5deg);
         }
+
+        .polaroid-video {
+            // height: 70%;
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(5deg);
+        }
+
        
         .loadingMessage {
             position: absolute;
