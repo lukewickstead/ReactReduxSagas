@@ -1,23 +1,23 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import ImageWithLoadingSpinner from '../ImageWithLoadingSpinner';
 
 function PolaroidImage({title, date, mediaType, url, hdurl}) {
 
     return (
         <div className={mediaType === 'video'? 'polaroid-video' : 'polaroid-image'}>
+
             <a href={hdurl || url}>
-                {mediaType === 'image' &&    
-                    <img src={url}/>
+
+                {mediaType === 'image' &&
+                    <ImageWithLoadingSpinner url={url} />
                 }
-                
-                {mediaType === 'video' &&    
+               
+                {mediaType === 'video' &&
                     <iframe
                         title={title}
                         src={url}
-                        webkitallowfullscreen
-                        mozallowfullscreen
-                        allowfullscreen
                         frameBorder="0">
                     </iframe>
                 }

@@ -2,11 +2,6 @@
     padding: 15px;
     background-color: white;
 
-    img {
-        height: 90%;       
-        width: auto;       
-    }
-
     iframe {
         width: 50vw;
         height: 50vh;
@@ -21,6 +16,13 @@
         font-size: 1em;
         text-align: center;
         margin-bottom: 5px;
+    }
+
+    .image-with-loading-spinner {
+        position: relative;
+        background-color: black;
+        height: 90%;
+        width: auto;    
     }
     
     &:before {
@@ -47,5 +49,5 @@
         position: absolute;
         transform: rotate(41deg);
         background-color: rgba(255, 255, 255, 0.3);
-    }    
+    } 
 }

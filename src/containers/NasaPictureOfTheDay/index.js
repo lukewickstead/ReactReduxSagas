@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import PolaroidImage from '../../components/PolaroidImage';
-import PostItNoteDialogueBox from '../../components/PostItNoteDialogueBox'
+import LoadingSpinner from '../../components/LoadingSpinner';
+import PostItNoteDialogueBox from '../../components/PostItNoteDialogueBox';
 import SimpleTextButtonGroup from '../../components/SimpleTextButtonGroup';
 
 import {
@@ -40,6 +41,7 @@ class NasaPictureOfTheDay extends Component {
               {isLoading &&
                 <div className="loadingMessage">
                   <p>Please wait, loading....</p>
+                  <LoadingSpinner />
                 </div>
               }
 
