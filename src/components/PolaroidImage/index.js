@@ -31,9 +31,9 @@ function PolaroidImage({title, date, mediaType, url, hdurl}) {
 PolaroidImage.propTypes = {
     hdurl: PropTypes.string,
     url: PropTypes.string.isRequired,
-    mediaType: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    mediaType: PropTypes.string.isRequired
 }
 
 export default PolaroidImage;

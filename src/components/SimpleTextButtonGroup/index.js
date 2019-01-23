@@ -4,9 +4,9 @@ function SimpleTextButtonGroup({previousHandler, nextHandler, infoHandler}) {
 
     return (
         <div>
-            <button className='simpleTextButton' onClick={previousHandler}>PREV</button>
-            <button className='simpleTextButton'onClick={nextHandler}>NEXT</button>
-            <button className='simpleTextButton' onClick={infoHandler}>INFO</button>
+            <button className='simple-text-button' onClick={previousHandler}>PREV</button>
+            <button className='simple-text-button' onClick={nextHandler}>NEXT</button>
+            <button className='simple-text-button' onClick={infoHandler}>INFO</button>
         </div>
     )
 }

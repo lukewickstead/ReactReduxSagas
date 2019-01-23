@@ -6,7 +6,7 @@ function PostItNoteDialogueBox({title, information, closeHandler}) {
         <div className="postItNoteDialogueBox">
             <h1>{title}</h1>
             <p>{information}</p>
-            <button className="simpleTextButton" onClick={closeHandler}>OK!</button>
+            <button className="simple-text-button" onClick={closeHandler}>OK!</button>
         </div>
     )
 }
