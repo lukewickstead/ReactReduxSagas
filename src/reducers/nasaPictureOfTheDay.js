@@ -13,6 +13,10 @@ export const initialState = {
 }
 
 export default function nasaPictureOfTheDayReducer(state = initialState, action) {
+  if(action === undefined) {
+    return state;
+  }
+  
   switch (action.type) {
     case PUT_NASA_PICTURE_OF_THE_DAY:
       return {...state, data: action.value};

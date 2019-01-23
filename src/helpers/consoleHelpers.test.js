@@ -7,7 +7,6 @@ import { consoleLog, consoleError } from './consoleHelpers';
 
 chai.use(sinonChai);
 
-
 describe('ConsoleHelpers', () => {
     describe('consoleLog', () => {
         beforeEach(function() {
