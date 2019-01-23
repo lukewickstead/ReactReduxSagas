@@ -11,7 +11,7 @@ import SimpleTextButtonGroup from '../../components/SimpleTextButtonGroup';
 import {
   getNasaPictureOfTheDay,
   putNasaPictureOfTheDayError,
-  putDisplayNasaPictureOfTheExplanation
+  putDisplayNasaPictureOfTheDayExplanation
 } from "../../actions/nasaPictureOfTheDay";
 
 class NasaPictureOfTheDay extends Component {
@@ -64,7 +64,7 @@ class NasaPictureOfTheDay extends Component {
                 <SimpleTextButtonGroup
                   previousHandler={() => this.props.getNasaPictureOfTheDayHandler(-1)}
                   nextHandler={() => this.props.getNasaPictureOfTheDayHandler(1)}
-                  infoHandler={() => this.props.putDisplayNasaPictureOfTheExplanationHandler(true)}/>
+                  infoHandler={() => this.props.putDisplayNasaPictureOfTheDayExplanationHandler(true)}/>
               }
 
               { !isLoading && !error && url &&
@@ -105,7 +105,7 @@ const mapDispatchToProps = dispatch => {
   return {
       getNasaPictureOfTheDayHandler: day => dispatch(getNasaPictureOfTheDay(day)),
       resetNasaPictureOfTheDayErrorHandler: () => dispatch(putNasaPictureOfTheDayError('')),
-      putDisplayNasaPictureOfTheExplanationHandler: display => dispatch(putDisplayNasaPictureOfTheExplanation(display))
+      putDisplayNasaPictureOfTheDayExplanationHandler: display => dispatch(putDisplayNasaPictureOfTheDayExplanation(display))
   }
 }
 

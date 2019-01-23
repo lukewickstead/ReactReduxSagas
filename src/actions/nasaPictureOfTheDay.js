@@ -21,7 +21,6 @@ export function putNasaPictureOfTheDayLoading(value) {
     return { type: PUT_NASA_PICTURE_OF_THE_DAY_LOADING, value};    
 }
 
-export function putDisplayNasaPictureOfTheExplanation(value) {
+export function putDisplayNasaPictureOfTheDayExplanation(value) {
     return { type: PUT_DISPLAY_NASA_PICTURE_OF_THE_DAY_EXPLANATION, value};    
 }
-

@@ -98,8 +98,6 @@ describe('<PolaroidImage /> for a video setting hdurl', () => {
         expect(iFrame.type()).to.equal('iframe');
       });
 
-      console.log(iFrame.debug());
-
       it('should set url', () => {       
         expect(iFrame.props().src).to.equal('MyUrl');
       });
