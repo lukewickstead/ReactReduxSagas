@@ -49,7 +49,7 @@ class NasaPictureOfTheDay extends Component {
                 <PostItNoteDialogueBox
                   title={title}
                   information={explanation}
-                  closeHandler={() => this.props.putDisplayNasaPictureOfTheExplanationHandler(false)}>
+                  closeHandler={() => this.props.putDisplayNasaPictureOfTheDayExplanationHandler(false)}>
                 </PostItNoteDialogueBox>
               }
 
@@ -89,7 +89,7 @@ NasaPictureOfTheDay.propTypes = {
   displayExplanation: PropTypes.bool.isRequired,
   getNasaPictureOfTheDayHandler: PropTypes.func.isRequired,
   resetNasaPictureOfTheDayErrorHandler: PropTypes.func.isRequired,
-  putDisplayNasaPictureOfTheExplanationHandler: PropTypes.func.isRequired
+  putDisplayNasaPictureOfTheDayExplanationHandler: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
