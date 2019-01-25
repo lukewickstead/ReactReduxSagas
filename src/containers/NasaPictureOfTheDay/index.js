@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import PolaroidImage from '../../components/PolaroidImage';
-import LoadingSpinner from '../../components/LoadingSpinner';
 import PostItNoteDialogueBox from '../../components/PostItNoteDialogueBox';
 import SimpleTextButtonGroup from '../../components/SimpleTextButtonGroup';
 
@@ -22,16 +21,8 @@ class NasaPictureOfTheDay extends Component {
  
   render() {
 
-    const {
-      url,
-      date,
-      hdurl,
-      title,
-      media_type,
-      explanation,
-    } = this.props.data;
-
     const {isLoading, error, displayExplanation} = this.props;
+    const { url, date, hdurl, title, media_type, explanation, } = this.props.data;
 
     return (
           <>
@@ -41,7 +32,6 @@ class NasaPictureOfTheDay extends Component {
               {isLoading &&
                 <div className="loadingMessage">
                   <p>Please wait, loading....</p>
-                  <LoadingSpinner />
                 </div>
               }
 
@@ -74,7 +64,7 @@ class NasaPictureOfTheDay extends Component {
                     url={url}
                     hdurl={hdurl}
                     mediaType={media_type}
-                    description={explanation} />
+                     />
               }
             </div>
           </> 
@@ -108,5 +98,7 @@ const mapDispatchToProps = dispatch => {
       putDisplayNasaPictureOfTheDayExplanationHandler: display => dispatch(putDisplayNasaPictureOfTheDayExplanation(display))
   }
 }
+
+export const NasaPictureOfTheDayContainer = NasaPictureOfTheDay;
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NasaPictureOfTheDay));

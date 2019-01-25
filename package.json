@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,6 +37,7 @@
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "react-test-renderer": "^16.7.0",
+    "redux-test-utils": "^0.3.0",
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0"
   }
